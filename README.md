@@ -4,7 +4,7 @@
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg) ## 📖 Overview
 
-The official Android application for the **AIUEO Japanese Learning Platform** ([aiueo.cc](https://aiueo.cc)). This app brings the comprehensive Japanese learning experience to mobile, allowing users to practice pronunciation, vocabulary, grammar, and daily conversations on the go.
+The unofficial Android application for the **AIUEO Japanese Learning Platform** ([aiueo.cc](https://aiueo.cc)). This app brings the comprehensive Japanese learning experience to mobile, allowing users to practice pronunciation, vocabulary, grammar, and daily conversations on the go.
 
 ## ✨ Features
 
@@ -52,9 +52,9 @@ Follow these steps to build and run the project on your local machine.
 
 ## 📸 Screenshots
 
-| Home | Hiragana Chart | Vocabulary |
+| Home | Grammar | Vocabulary |
 |:---:|:---:|:---:|
-| <img src="link_to_screenshot_1" width="200"/> | <img src="link_to_screenshot_2" width="200"/> | <img src="link_to_screenshot_3" width="200"/> |
+| <img width="200" alt="image" src="https://github.com/user-attachments/assets/eff4d869-a907-4f21-980f-999941125a1e" /> | <img width="200" alt="image" src="https://github.com/user-attachments/assets/ea685744-f82d-4b49-b429-262e615537be" /> | <img width="200" alt="image" src="https://github.com/user-attachments/assets/27bdc189-3af3-4108-94a3-3ec6d41fc7b4" /> |
 
 ## 🤝 Contributing
 
@@ -63,4 +63,4 @@ Feel free to check [issues page](https://github.com/huiyao-star/aiueo-android/is
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE). ```
+This project is licensed under the [MIT License](LICENSE).

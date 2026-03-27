@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.Aiueo" parent="Theme.MaterialComponents.Light" />
+</resources>

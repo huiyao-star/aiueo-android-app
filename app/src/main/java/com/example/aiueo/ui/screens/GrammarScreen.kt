@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
@@ -14,8 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.aiueo.ui.theme.AiueoTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -157,7 +159,7 @@ data class GrammarLevel(val name: String, val title: String, val count: String, 
 @Composable
 fun LevelCard(modifier: Modifier = Modifier, level: GrammarLevel) {
     Card(
-        modifier = modifier.height(80.dp),
+        modifier = modifier.height(90.dp),
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(containerColor = Color(0xFF2A2A2A)),
         elevation = CardDefaults.cardElevation(defaultElevation = 1.dp)
@@ -175,13 +177,25 @@ fun LevelCard(modifier: Modifier = Modifier, level: GrammarLevel) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .weight(1.2f)
-                    .padding(vertical = 4.dp),
+                    .weight(1.5f)
+                    .padding(horizontal = 4.dp, vertical = 2.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
-                Text(text = level.title, fontSize = 11.sp, fontWeight = FontWeight.Bold)
-                Text(text = level.count, fontSize = 9.sp, color = Color.Gray)
+                Text(
+                    text = level.title, 
+                    fontSize = 10.sp, 
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    lineHeight = 12.sp,
+                    maxLines = 2
+                )
+                Text(
+                    text = level.count, 
+                    fontSize = 9.sp, 
+                    color = Color.Gray,
+                    textAlign = TextAlign.Center
+                )
             }
         }
     }
@@ -197,5 +211,13 @@ fun ActionButton(modifier: Modifier = Modifier, text: String, color: Color) {
         contentPadding = PaddingValues(0.dp)
     ) {
         Text(text = text, fontSize = 13.sp, fontWeight = FontWeight.Bold)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GrammarScreenPreview() {
+    AiueoTheme {
+        GrammarScreen(onNavigateToDetail = {})
     }
 }

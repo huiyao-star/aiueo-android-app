@@ -18,8 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.aiueo.ui.theme.AiueoTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -194,5 +196,13 @@ fun SectionHeader(title: String, icon: ImageVector) {
         Text(text = title, modifier = Modifier.padding(horizontal = 16.dp), fontWeight = FontWeight.Bold, fontSize = 18.sp)
         Box(modifier = Modifier.weight(1f).height(1.dp).background(Color.Gray))
         Icon(icon, contentDescription = null, tint = Color(0xFFFF4081), modifier = Modifier.padding(start = 8.dp))
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ReadingScreenPreview() {
+    AiueoTheme {
+        ReadingScreen(onNavigateToDetail = {})
     }
 }

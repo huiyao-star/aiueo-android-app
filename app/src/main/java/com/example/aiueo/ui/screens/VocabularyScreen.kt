@@ -10,8 +10,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.aiueo.ui.theme.AiueoTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -89,5 +91,13 @@ fun VocabularyScreen(
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun VocabularyScreenPreview() {
+    AiueoTheme {
+        VocabularyScreen(onNavigateToSurname = {}, onNavigateToGame = {})
     }
 }

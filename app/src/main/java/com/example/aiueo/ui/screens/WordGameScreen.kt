@@ -13,8 +13,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.aiueo.ui.theme.AiueoTheme
 
 @Composable
 fun WordGameScreen(onBack: () -> Unit, highScore: Int, onUpdateScore: (Int) -> Unit) {
@@ -201,5 +203,13 @@ fun PitchAccentText(text: String, accentPositions: List<Int>) {
                 }
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun WordGameScreenPreview() {
+    AiueoTheme {
+        WordGameScreen(onBack = {}, highScore = 8200, onUpdateScore = {})
     }
 }

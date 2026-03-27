@@ -3,9 +3,6 @@ package com.example.aiueo.ui.screens
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Chat
 import androidx.compose.material.icons.automirrored.filled.MenuBook
@@ -16,8 +13,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.aiueo.ui.theme.AiueoTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -54,21 +53,6 @@ fun HomeScreen() {
                     fontWeight = FontWeight.SemiBold,
                     modifier = Modifier.padding(bottom = 8.dp)
                 )
-            }
-
-            item {
-                val modules = listOf(
-                    ModuleItem("五十音测试", Icons.Default.Quiz, "Gojuon Test"),
-                    ModuleItem("单词游戏", Icons.Default.Gamepad, "Word Game"),
-                    ModuleItem("汉字学习", Icons.Default.Translate, "Kanji"),
-                    ModuleItem("文法精讲", Icons.AutoMirrored.Filled.MenuBook, "Grammar"),
-                    ModuleItem("场景对话", Icons.AutoMirrored.Filled.Chat, "Conversation"),
-                    ModuleItem("视频讲座", Icons.Default.PlayCircle, "Video")
-                )
-
-                // Use a Box or height-constrained container for the grid inside LazyColumn
-                // Or better, use items() directly in LazyColumn if we want it to scroll as one list
-                // For simplicity here, we use a Column with Rows or just a fixed height grid
             }
             
             val modules = listOf(
@@ -131,7 +115,8 @@ fun ModuleCard(module: ModuleItem) {
         modifier = Modifier
             .fillMaxWidth()
             .clickable { /* TODO: Navigate */ },
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
@@ -142,5 +127,13 @@ fun ModuleCard(module: ModuleItem) {
             Text(text = module.name, fontWeight = FontWeight.Bold, fontSize = 14.sp)
             Text(text = module.subtitle, fontSize = 12.sp, color = MaterialTheme.colorScheme.outline)
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenPreview() {
+    AiueoTheme {
+        HomeScreen()
     }
 }
